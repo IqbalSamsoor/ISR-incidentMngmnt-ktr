@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -42,5 +42,91 @@
             });
         </script>
     </head>
+    <body class="sapUiBody" id="content">body</body>
+</html> -->
+
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <script>
+
+            // this is launchpad config, it show apps on home page
+            window['sap-ushell-config'] = {
+                defaultRenderer: 'fiori2',
+
+                services: {
+                    NavTargetResolution: {
+                        config: {
+                            allowTestUrlComponentConfig: true,
+                            enableClientSideTargetResolution: true
+                        }
+                    }           
+                },
+
+                // here we define all apps (tiles) in launchpad
+                applications: {
+
+                    // main incidents app (our main project app)
+                    "incidents-app": {
+                        title: 'Incident-Management',
+                        description: 'Incidents',
+                        additionalInformation: 'SAPUI5.Component=ns.incidents',
+                        applicationType: 'URL',
+                        url: "./incidents/webapp",
+                        navigationMode: 'embedded'
+                    },
+
+                    // admin app (just extra practice app)
+                    "admin-app": {
+                        title: 'Admin Panel',
+                        description: 'manage customers and incidents',
+                        additionalInformation: 'SAPUI5.Component=ns.admin',
+                        applicationType: 'URL',
+                        url: "./admin/webapp",
+                        navigationMode: 'embedded'
+                    },
+
+                    // test app (only for learning navigation idea)
+                    "test-app": {
+                        title: 'Test App',
+                        description: 'just testing launchpad flow',
+                        additionalInformation: 'SAPUI5.Component=ns.test',
+                        applicationType: 'URL',
+                        url: "./test/webapp",
+                        navigationMode: 'embedded'
+                    }
+
+                }
+            }
+        </script>
+
+        <!-- sap ui5 bootstrap -->
+        <script src="https://ui5.sap.com/test-resources/sap/ushell/bootstrap/sandbox.js"></script>
+
+        <script
+            src="https://ui5.sap.com/resources/sap-ui-core.js"
+            data-sap-ui-libs="sap.m, sap.ushell, sap.fe.templates"
+            data-sap-ui-compatVersion="edge"
+            data-sap-ui-theme="sap_horizon"
+            data-sap-ui-frameOptions="allow"
+            data-sap-ui-bindingSyntax="complex"
+        ></script>
+
+        <script>
+            // start launchpad after ui5 is ready
+            sap.ui.getCore().attachInit(function() {
+                sap.ushell.Container.createRenderer().placeAt('content');
+            });
+        </script>
+
+    </head>
+
     <body class="sapUiBody" id="content">body</body>
 </html>
