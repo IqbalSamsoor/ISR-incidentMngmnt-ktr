@@ -30,7 +30,13 @@
             "khan@gmail.com": {
               "password": "khan123",
               "roles": [
-                "support"
+                "admin"
+              ]
+            },
+            "admin": {
+              "password": "admin123",
+              "roles": [
+                "admin"
               ]
             },
             "alice": {
