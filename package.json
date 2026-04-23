@@ -5,12 +5,14 @@
     "@sap/cds": "^9"
   },
   "devDependencies": {
+    "@cap-js/cds-test": "^0.4.1",
     "@cap-js/sqlite": "^2",
     "@sap/ux-specification": "^1.144.1",
     "@sap/ux-ui5-tooling": "^1.22.0",
     "cds-plugin-ui5": "^0.13.0"
   },
   "scripts": {
+    "test": "npx jest tests/test.js",
     "start": "cds-serve",
     "watch-incidents": "cds watch --open ns.incidents/index.html?sap-ui-xx-viewCache=false --livereload false"
   },

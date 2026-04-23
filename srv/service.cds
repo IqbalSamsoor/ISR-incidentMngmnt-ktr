@@ -25,14 +25,14 @@ annotate AdminService with @(requires: 'admin');
 
 // adding new restrictions on user types for practice purpose
 
-// only admin can update incidents
-annotate ProcessorService.Incidents with @(restrict: [
-  { grant: 'READ', to: 'support' },
-  { grant: 'UPDATE', to: 'admin' }
-]);
+// // only admin can update incidents
+// annotate ProcessorService.Incidents with @(restrict: [
+//   { grant: 'READ', to: 'support' },
+//   { grant: 'UPDATE', to: 'admin' }
+// ]);
 
-// only admin can delete incidents
-annotate ProcessorService.Incidents with @(restrict: [
-  { grant: 'DELETE', to: 'admin' }
-]);
+// // only admin can delete incidents
+// annotate ProcessorService.Incidents with @(restrict: [
+//   { grant: 'DELETE', to: 'admin' }
+// ]);
 
