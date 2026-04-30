@@ -25,37 +25,37 @@
     "app/incidents",
     "app/customer"
   ],
-  "cds": {
-    "requires": {
-      "[development]": {
-        "auth": {
-          "kind": "mocked",
-          "users": {
-            "khan@gmail.com": {
-              "password": "khan123",
-              "roles": [
-                "admin"
-              ]
-            },
-            "admin": {
-              "password": "admin123",
-              "roles": [
-                "admin"
-              ]
-            },
-            "alice": {
-              "roles": [
-                "support"
-              ]
-            },
-            "bob": {
-              "roles": [
-                "support"
-              ]
-            }
+"cds": {
+  "requires": {
+    "[development]": {
+      "auth": {
+        "kind": "mocked",
+        "users": {
+          "khan@gmail.com": {
+            "password": "khan123",
+            "roles": ["admin"]
+          },
+          "admin": {
+            "password": "admin123",
+            "roles": ["admin"]
+          },
+          "alice": {
+            "roles": ["support"]
+          },
+          "bob": {
+            "roles": ["support"]
           }
+        }
+      }
+    },
+    "db": {
+      "[development]": {
+        "kind": "sqlite",
+        "credentials": {
+          "url": "db.sqlite"
         }
       }
     }
   }
+}
 }
